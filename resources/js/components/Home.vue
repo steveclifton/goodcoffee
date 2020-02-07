@@ -1,14 +1,55 @@
 <template>
-    <div>
-        <h1>home</h1>
-        <button @click="getClosest">Use my devices Location</button>
-        <div v-if="error">{{error}}</div>
-        <div v-if="loading">{{loading}}</div>
-        <ul>
-            <li v-for="cafe in cafes">
-                {{ cafe.distance + 'm' + ' - ' + cafe.name + ', ' + cafe.address}}
-            </li>
-        </ul>
+    <div class="page-wrap">
+
+        <div class="top-half-page">
+
+            <div class="nav">
+                <a class="instagram" href=""><i class="fab fa-instagram"></i></a>
+                <a class="login" href="">Login / Sign Up</a>
+            </div>
+
+            <div class="top-half-page-inner">
+
+
+                <img class="coffee animated bounceInDown" src="images/coffee.svg" alt="">
+                <h1 class="s-heading-1 u-align-center u-pt-20 u-mt-0">find good coffee nz</h1>
+
+                <div class="search-wrap u-m-auto">
+                    <div class="search-bar u-pos-relative">
+                        <input class="search-input u-block u-m-auto" type="text" placeholder="Search..">
+                        <button @click="getClosest">Find closest!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-half-page">
+            <h2 class="u-text-brand u-align-center u-pt-20 u-text-darker">Near Me</h2>
+
+            <div class="near-me-items">
+
+                <div class="item" v-for="cafe in cafes">
+                    <a href="">
+                        <div class="item-inner u-pos-relative">
+                            <img src="images/coffeeimg.jpg" alt="">
+                            <div class="overlay u-pos-absolute">
+                                <div class="top-row">
+                                    <div class="reviews">29 Reviews</div>
+                                    <div class="rating">4.5</div>
+                                </div>
+                                <div class="bottom-row">
+                                    <h3 class="name u-pb-10">{{cafe.name}}</h3>
+                                    <div class="bean u-pb-5">Bean: Allpress</div>
+                                    <div class="distance">Distance {{cafe.distance}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </template>
 
@@ -54,8 +95,12 @@
                 }
             }
         },
-        mounted() {
-            console.log('Component mounted.')
+        created() {
+            let pckry = new Packery('.grid', {
+                // options
+                itemSelector: '.grid-item',
+                gutter: 10
+            });
         },
     }
 </script>

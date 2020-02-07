@@ -1,0 +1,41 @@
+
+// ------------------------ //
+//     1. MEDIA QUERIES     //
+// ------------------------ //
+$tablet: 1200; //means up to 1200px
+$mobile: 750; // 361px - 750px
+$mobileSmall: 360; //0px - 360px
+
+@mixin breakpoint($point) {
+	//desktop
+	@if $point == desktop{
+		@media (min-width: ($tablet+1)+px) { @content; }
+	}
+
+	//tablet
+	@else if $point == tablet{
+		@media (min-width: ($mobile+1)+px) and (max-width: $tablet+px)	{ @content; }
+	}
+
+	//mobile
+	@else if $point == mobile{
+		@media (min-width: 0px) and (max-width: $mobile+px) { @content; }
+	}
+
+	//mobile small
+	@else if $point == mobileSmall{
+		@media (min-width: 0px) and (max-width: $mobileSmall+px) { @content; }
+	}
+}
+
+@mixin bp($min, $max){
+	@media (min-width: $min+px) and (max-width: $max+px) { @content; }
+}
+
+@mixin bpmin($min){
+	@media (min-width: $min+px) { @content; }
+}
+
+@mixin bpmax($max){
+	@media (max-width: $max+px) { @content; }
+}

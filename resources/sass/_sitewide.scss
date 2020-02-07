@@ -1,0 +1,115 @@
+// *** Contents
+
+
+//  1. Text colour/Size
+
+//  2. Text alignment
+
+//  3. Paddings and margins
+
+body {
+	font-family: $font-primary;
+}
+
+// ------------------------ //
+//     1. TEXT COLOR/SIZE.  //
+// ------------------------ //
+
+.u-text-white {
+	color: $white;
+}
+
+.u-text-black {
+	color: $black;
+}
+
+.u-text-brand {
+	color: $brand-color;
+}
+
+.u-text-darker {
+	color: darken( $brand-color, 40% );
+}
+
+
+
+.s-heading-1 {
+	font-family: $roboto-mono;
+	font-weight: $bold;
+
+}
+
+// ------------------------ //
+//     2. TEXT ALIGNMENT .  //
+// ------------------------ //
+
+.u-align-center {
+	text-align: center;
+}
+
+.u-align-left {
+	text-align: left;
+}
+
+.u-align-right {
+	text-align: right;
+}
+
+
+// ------------------------------- //
+//     3. PADDINGS AND MARGINS  .  //
+// ------------------------------ //
+
+.u-m-auto {
+	margin: auto;
+}
+
+.u-mt-0 {
+	margin-top: 0px;
+}
+
+
+.u-pt-50 {
+	padding-top: 50px;
+}
+
+.u-pt-20 {
+	padding-top: 20px;
+}
+
+.u-pb-5 {
+	padding-bottom: 5px;
+}
+
+.u-pb-10 {
+	padding-bottom: 10px;
+}
+
+.u-pb-20 {
+	padding-bottom: 20px;
+}
+
+
+// ----------------------------- //
+//     3. DISPLAY PROPERTIES  .  //
+// ---------------------------- //
+
+.u-block {
+	display: block;
+}
+
+.u-inline {
+	display: inline;
+}
+
+.u-inline-block {
+	display: inline-block;
+}
+
+.u-pos-relative {
+	position: relative;
+}
+
+.u-pos-absolute {
+	position: absolute;
+}
