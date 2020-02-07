@@ -11,6 +11,17 @@
 |
 */
 
+//Route::get('getcities', 'Zomato\ZomatoController@getCities');
+//Route::get('getcuisines', 'Zomato\ZomatoController@getCuisines');
+//Route::get('getallcitiescafes', 'Zomato\ZomatoController@getAllCitiesCafes');
+//Route::get('importallpresscafes', 'Allpress\AllpressController@importCafes');
+//Route::get('importsupremecafes', 'Supreme\SupremeController@importCafes');
+Route::get('test', 'HomeController@getClosestCafesByIp');
+
 Route::get('/{any}', function () {
-    return view('welcome');
+
+    $home = new \App\Http\Controllers\HomeController();
+    $cafes = $home->getClosestCafesByIp();
+
+    return view('welcome', compact('cafes'));
 })->where('any', '.*');
